@@ -401,9 +401,3 @@ mymessage2 = Message.new(thread_number:1, title:'RE: Prise de contact', body:'Bo
 mymessage2.request = myrequest
 mymessage2.profile = myartist
 mymessage2.save!
-
-
-
-
-
-
