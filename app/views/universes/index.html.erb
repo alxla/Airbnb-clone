@@ -1,2 +1,23 @@
-<h1>Universes#index</h1>
-<p>Find me in app/views/universes/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <% @universes.shuffle.each do |universe| %>
+      <div class="col-xs-12 col-sm-4 badge-container">
+        <%= link_to universe_path(universe) do %>
+            <!-- Correct the style when pictures are in the database !!!! -->
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/alxla/image/upload/v1487956879/mwcbh9tzd7itdvdfotot.png')">
+            <div class="card-category">
+              <p><%= universe.name %></p>
+            </div>
+            <div class="card-description">
+              <p>Artist: <%= universe.profile.name %></p>
+              <p>From: <%= universe.profile.country %></p>
+            </div>
+            <div class="badge">
+            <!-- add a picture from the artist -->
+            </div>
+          </div>
+        <%end%>
+      </div>
+    <% end %>
+  </div>
+</div>

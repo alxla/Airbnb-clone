@@ -1,0 +1,40 @@
+/* Card design */
+.card{
+  height: 300px;
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  background-size: cover;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+  opacity: 0.9;
+}
+
+.card:hover{
+  opacity: 1;
+}
+
+.card .card-category {
+  text-align: left;
+  color: white;
+  font-size: 28px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
+.card .card-description {
+  text-align: left;
+  color: white;
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+}
+
+.card .card-buttons {
+  text-align: right;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
