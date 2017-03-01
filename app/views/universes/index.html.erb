@@ -12,8 +12,7 @@
               <p>Artist: <%= universe.profile.name %></p>
               <p>From: <%= universe.profile.country %></p>
             </div>
-            <div class="badge">
-            <!-- add a picture from the artist -->
+            <div class="badge" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path universe.profile.picture_url %>')">
             </div>
           </div>
         <%end%>

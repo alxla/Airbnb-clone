@@ -130,11 +130,11 @@ myproduct.save!
 
 myartistuser = User.new(email:'Hugo@yahoo.com')
 myartistuser.password = 'Tituscanadien'
-myartist.remote_picture_url = "http://res.cloudinary.com/alxla/image/upload/v1488387001/hugo_nb8osg.png"
 myartistuser.save!
 
 myartist = Profile.new(profile_type:'artist', name:'Hugo', country:'CAN')
 myartist.user = myartistuser
+myartist.remote_picture_url = "http://res.cloudinary.com/alxla/image/upload/v1488387001/hugo_nb8osg.png"
 myartist.save!
 
 myuniverse = Universe.new(name:"Hugo universe")
@@ -148,11 +148,11 @@ myproduct.save!
 ##########
 myartistuser = User.new(email:'Captain@gmail.com')
 myartistuser.password = 'Biere10litres'
-myartist.remote_picture_url = "http://res.cloudinary.com/alxla/image/upload/v1488386298/captain_noxq9o.png"
 myartistuser.save!
 
 myartist = Profile.new(profile_type:'artist', name:'Captain', country:'FR')
 myartist.user = myartistuser
+myartist.remote_picture_url = "http://res.cloudinary.com/alxla/image/upload/v1488386298/captain_noxq9o.png"
 myartist.save!
 
 myuniverse = Universe.new(name:"Captain universe")
@@ -166,12 +166,11 @@ myproduct.save!
 #########
 myartistuser = User.new(email:'Ronald@caramail.fr')
 myartistuser.password = 'Macdonald'
-myartist.remote_picture_url = "http://res.cloudinary.com/alxla/image/upload/v1488386298/macdonald_fduwyk.jpg"
-
 myartistuser.save!
 
 myartist = Profile.new(profile_type:'artist', name:'Martin', country:'FR')
 myartist.user = myartistuser
+myartist.remote_picture_url = "http://res.cloudinary.com/alxla/image/upload/v1488386298/macdonald_fduwyk.jpg"
 myartist.save!
 
 myuniverse = Universe.new(name:"Ronald universe")
