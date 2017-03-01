@@ -1,0 +1,26 @@
+
+<% Universe.all.each do |universe| %>
+<%= universe.name %>
+<br>
+<%end%>
+
+<% Product.all.each do |product| %>
+<%= product.name%>
+<br>
+<%end%>
+
+<% Profile.all.each do |profile| %>
+<%= profile.name%>
+<br>
+<%end%>
+
+<% Request.all.each do |request| %>
+<%= request.status%>
+<br>
+<%end%>
+
+<% Message.all.each do |message| %>
+<%= message.title%>
+<%= message.body%>
+<br>
+<%end%>
