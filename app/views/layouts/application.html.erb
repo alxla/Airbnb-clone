@@ -15,7 +15,9 @@
 
   </head>
   <body>
+    <%= render "shared/navbar" %>
     <%= yield %>
+    <!-- yield intégre tous les fichiers de views -->
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
