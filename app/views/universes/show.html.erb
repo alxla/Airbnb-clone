@@ -6,7 +6,7 @@
         <div class="col-xs-7">
         </div>
         <div class="col-xs-5">
-        <h1><%=Universe name%></h1>
+        <h1><%=@universe.name%></h1>
         </div>
       </div>
     </div>
@@ -22,15 +22,21 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-3">
-        <%= image_tag "artist_photo.png", {class: "img-circle", id: "artist_photo"}%>
+        <%= image_tag "artist_photo.png" %>
       </div>
-      <div class="col-xs-7">Artist description</div>
-      <div class="col-xs-2">Bouton</div>
+      <div class="col-xs-9">
+        <div class="row">
+          <div class="col-xs-12"><%= @universe.profile.name%>
+            <div class="row">
+              <div class="col-xs-8"><%=@universe.profile.biography%></div>
+              <div class="col-xs-4"><a href="#" class="btn-medium">Contact</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12">
-      <h2>Products</h2>
-    </div>
+    <div class="col-xs-12">Products</div>
   </div>
 </div>
