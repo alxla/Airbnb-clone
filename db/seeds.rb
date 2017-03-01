@@ -31,7 +31,7 @@ myuniverse = Universe.new(name:"toto universe")
 myuniverse.profile = myartist
 myuniverse.save!
 
-myproduct = Product.new(name:'tshirt')
+myproduct = Product.new(name:'tshirt', description:'mon joli tshirt')
 myproduct.universe = myuniverse
 myproduct.save!
 
@@ -112,7 +112,7 @@ myuniverse = Universe.new(name:"kiki universe")
 myuniverse.profile = myartist
 myuniverse.save!
 
-myproduct = Product.new(name:'bijou')
+myproduct = Product.new(name:'bijou', description:'mon joli bijou')
 myproduct.universe = myuniverse
 myproduct.save!
 
@@ -130,7 +130,7 @@ myuniverse = Universe.new(name:"Hugo universe")
 myuniverse.profile = myartist
 myuniverse.save!
 
-myproduct = Product.new(name:'Chien')
+myproduct = Product.new(name:'Chien', description:'mon joli chien')
 myproduct.universe = myuniverse
 myproduct.save!
 ##########
@@ -146,7 +146,7 @@ myuniverse = Universe.new(name:"Captain universe")
 myuniverse.profile = myartist
 myuniverse.save!
 
-myproduct = Product.new(name:'Bocs')
+myproduct = Product.new(name:'Bocs', description:'mon joli boc')
 myproduct.universe = myuniverse
 myproduct.save!
 #########
@@ -162,7 +162,7 @@ myuniverse = Universe.new(name:"Martin universe")
 myuniverse.profile = myartist
 myuniverse.save!
 
-myproduct = Product.new(name:'Burgers')
+myproduct = Product.new(name:'Burgers', description:'mon joli burger')
 myproduct.universe = myuniverse
 myproduct.save!
 
@@ -179,7 +179,7 @@ myuniverse = Universe.new(name:"Koons universe")
 myuniverse.profile = myartist
 myuniverse.save!
 
-myproduct = Product.new(name:'Plug')
+myproduct = Product.new(name:'Plug', description:'mon joli plug')
 myproduct.universe = myuniverse
 myproduct.save!
 #########
@@ -195,7 +195,7 @@ myuniverse = Universe.new(name:"Niel universe")
 myuniverse.profile = myartist
 myuniverse.save!
 
-myproduct = Product.new(name:'minitel')
+myproduct = Product.new(name:'minitel', description:'mon joli minitel')
 myproduct.universe = myuniverse
 myproduct.save!
 #########
@@ -211,7 +211,7 @@ myuniverse = Universe.new(name:"lolo universe")
 myuniverse.profile = myartist
 myuniverse.save!
 
-myproduct = Product.new(name:'Ferrari')
+myproduct = Product.new(name:'Ferrari', description:'mon joli taco')
 myproduct.universe = myuniverse
 myproduct.save!
 #########
@@ -227,7 +227,7 @@ myuniverse = Universe.new(name:"Trump universe")
 myuniverse.profile = myartist
 myuniverse.save!
 
-myproduct = Product.new(name:'Weapons')
+myproduct = Product.new(name:'Weapons', description:'mon joli jouet')
 myproduct.universe = myuniverse
 myproduct.save!
 #########
@@ -243,7 +243,7 @@ myuniverse = Universe.new(name:"Fion universe")
 myuniverse.profile = myartist
 myuniverse.save!
 
-myproduct = Product.new(name:'Magicien')
+myproduct = Product.new(name:'Magicien', description:'mon bel emploi')
 myproduct.universe = myuniverse
 myproduct.save!
 #########
@@ -346,58 +346,3 @@ mymessage3.save!
 # add_foreign_key "requests", "profiles"
 # add_foreign_key "requests", "profiles", column: "profile_artist_id"
 # add_foreign_key "universes", "profiles"
-
-
-# **********************Scenario 2************************:
-
-# Creation de l'artiste
-
-myartistuser = User.new(email:'tot@gmail.com')
-myartistuser.password = 'test123'
-myartistuser.save!
-
-myartist = Profile.new(profile_type:'artist', name:'toto', country:'FR')
-myartist.user = myartistuser
-myartist.save!
-
-myuniverse = Universe.new(name:"toto universe")
-myuniverse.profile = myartist
-myuniverse.save!
-
-myproduct = Product.new(name:'tshirt')
-myproduct.universe = myuniverse
-myproduct.save!
-
-
-# Creation du client
-
-myclientuser = User.new(email:'carol@gmail.com')
-myclientuser.password = 'password'
-myclientuser.save!
-
-myclient = Profile.new(profile_type:'client', name:'carole', country:'BE')
-myclient.user = myclientuser
-myclient.save!
-
-# Creation de la requete
-
-myrequest = Request.new(status:'pending')
-myrequest.profile_client = myclient
-myrequest.profile_artist = myartist
-myrequest.product = myproduct
-myrequest.save!
-
-# Creation d'un message
-
-mymessage1 = Message.new(thread_number:1, title:'Prise de contact', body:'Bonjour, j aime votre travail')
-mymessage1.request = myrequest
-mymessage1.profile = myclient
-mymessage1.save!
-
-
-# Creation d'un message de réponse
-
-mymessage2 = Message.new(thread_number:1, title:'RE: Prise de contact', body:'Bonjour, merci je travaille dur')
-mymessage2.request = myrequest
-mymessage2.profile = myartist
-mymessage2.save!
