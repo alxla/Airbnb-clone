@@ -1,2 +1,36 @@
-<h1>Universes#show</h1>
-<p>Find me in app/views/universes/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12"></div>
+      <%= image_tag "universe_photo.png", {class: "img-circle", id: "universe_photo"}%>
+      <div class="row">
+        <div class="col-xs-7">
+        </div>
+        <div class="col-xs-5">
+        <h1><%=Universe name%></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2">Theme1</div>
+    <div class="col-xs-2">Theme2</div>
+    <div class="col-xs-2">Theme3</div>
+    <div class="col-xs-2">Theme4</div>
+    <div class="col-xs-2">Theme5</div>
+    <div class="col-xs-2">Theme6</div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3">
+        <%= image_tag "artist_photo.png", {class: "img-circle", id: "artist_photo"}%>
+      </div>
+      <div class="col-xs-7">Artist description</div>
+      <div class="col-xs-2">Bouton</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Products</h2>
+    </div>
+  </div>
+</div>
