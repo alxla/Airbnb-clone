@@ -1,1 +1,36 @@
+.universe-cover {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+}
 
+.universe-cover-title {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 10px;
+  text-transform: capitalize;
+}
+.btn-contact {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #6AD58B;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+.profile-cover {
+  background-size: cover !important;
+  background-color: #DCDCDC;
+  position: relative;
+}
+.profile-title {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 10px;
+  text-transform: capitalize;
+}
