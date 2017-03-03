@@ -1,0 +1,78 @@
+<h6>Requests#index | logged as: <%= @current_profile.name %> | user type: <%= @current_profile.profile_type %></h6>
+
+<div class="container">
+  <% @requests.each do |request| %>
+  <div class="row thread-top">
+
+    <div class="col-xs-12">
+      <h5> Request status: <%= if (request.status == 0) then "pending" else "closed" end %></h5>
+    </div>
+
+  </div>
+
+  <% @messages.select { |msg| msg.request == request }.each do |message| %>
+  <div class="row message">
+
+    <div class="col-xs-12 col-sm-1 thread-message">
+    </div>
+
+    <div class="col-xs-12 col-sm-1 message-name">
+      <%= cl_image_tag message.profile.picture_url, class:"picture-message" %>
+      <br>
+      <p><%= message.profile.name.capitalize %></p>
+    </div>
+
+    <div class="col-xs-12 col-sm-9">
+      <div class="message-title">
+        <p><%= message.title %></p>
+      </div>
+      <div class="message-body">
+        <p><%= message.body %></p>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-1 thread-message">
+    </div>
+
+  </div>
+  <% end %>
+
+  <div class="row message">
+
+
+    <div class="col-xs-12 col-sm-1 thread-message">
+    </div>
+
+    <div class="col-xs-12 col-sm-1 message-name" >
+      <%= cl_image_tag @current_profile.picture_url, class:"picture-message" %>
+      <br>
+      <p><%= @current_profile.name.capitalize %></p>
+    </div>
+
+    <div class="col-xs-12 col-sm-9">
+      <%= render 'form', request: request %>
+    </div>
+
+    <div class="col-xs-12 col-sm-1 thread-message">
+    </div>
+
+  </div>
+
+  <div class="row thread-bottom">
+
+    <div class="col-xs-12 col-sm-2">
+    </div>
+
+    <div class="col-xs-12 col-sm-8 message-btns-container">
+      <div class="message-btns">
+        <%= link_to "Accept", profile_requests_path, {class: "btn btn-success btn-xs"} %>
+        <%= link_to "Decline", profile_requests_path, {class: "btn btn-danger btn-xs"} %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-2">
+    </div>
+
+  </div>
+  <% end %>
+</div>

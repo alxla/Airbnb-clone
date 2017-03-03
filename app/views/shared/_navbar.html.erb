@@ -30,13 +30,25 @@
       </div>
     </div>
 
- <!-- Notification link-->
-    <a href="" class="navbar-kingdom-item navbar-kingdom-link">
+<!-- User logged?-->
+    <% if current_user %>
       <div class="navbadge-container">
-        <i class="fa fa-envelope-o"></i>
-        <div class="navbadge badge-blue">3</div>
+        <p><%= current_user.profile.name %></p>
       </div>
-    </a>
+    <% else %>
+      <!-- nothing as not logged !!! -->
+    <% end %>
+
+ <!-- Notification link-->
+    <% if current_user %>
+      <%= link_to profile_requests_path(current_user.profile), class: "navbar-kingdom-item navbar-kingdom-link" do %>
+        <div class="navbadge-container">
+          <i class="fa fa-envelope-o"></i>
+        </div>
+      <% end %>
+    <% else %>
+      <!-- nothing as not logged !!! -->
+    <% end %>
 
     <!-- Button (Sing up / log in/out) -->
 <!--     <a href="" class="navbar-kingdom-item navbar-kingdom-button btn ">Sign up / Sign in</a> -->
