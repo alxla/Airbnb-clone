@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :universes, only: [:index, :show]
+  resources :messages
+  resources :profile do
+    resources :requests
+  end
 
   # get    "universes",          to: "universes#index"
   # get    "universes/:id",      to: "universes#show"
