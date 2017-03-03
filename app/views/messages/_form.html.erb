@@ -1,0 +1,7 @@
+<%= simple_form_for @message do |f| %>
+  <%= f.input :title, label: 'Title of your message', error: 'A title is mandatory, please specify one' %>
+  <%= f.input :body, label: 'Body of your message', error: 'A body is mandatory, please specify one', as: :text %>
+  <%= f.input :profile_id, label: 'Sender of the message', collection: @profiles %>
+  <%= f.input :request_id, label: 'Request we are taking about', collection: @requests %>
+  <%= f.button :submit %>
+<% end %>
