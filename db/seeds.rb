@@ -282,75 +282,77 @@ myproduct.save!
 
 # Creation d'1 requete
 
-myrequest = Request.new(status:'order')
-myrequest.profile_client = myclient
-myrequest.profile_artist = myartist
-myrequest.product = myproduct
-myrequest.save!
+#Status : 0 = pending, 1 = agreed
+
+myrequest1 = Request.new(status:0)
+myrequest1.profile_client = myclient
+myrequest1.profile_artist = myartist
+myrequest1.product = myproduct
+myrequest1.save!
 
 #####
-myrequest = Request.new(status:'pending')
-myrequest.profile_client = myclient
-myrequest.profile_artist = myartist
-myrequest.product = myproduct
-myrequest.save!
+myrequest2 = Request.new(status:0)
+myrequest2.profile_client = myclient
+myrequest2.profile_artist = myartist
+myrequest2.product = myproduct
+myrequest2.save!
 
 #####
-myrequest = Request.new(status:'confirmed')
-myrequest.profile_client = myclient
-myrequest.profile_artist = myartist
-myrequest.product = myproduct
-myrequest.save!
+myrequest3 = Request.new(status:0)
+myrequest3.profile_client = myclient
+myrequest3.profile_artist = myartist
+myrequest3.product = myproduct
+myrequest3.save!
 
 #####
-myrequest = Request.new(status:'paid')
-myrequest.profile_client = myclient
-myrequest.profile_artist = myartist
-myrequest.product = myproduct
-myrequest.save!
+myrequest3 = Request.new(status:1)
+myrequest3.profile_client = myclient
+myrequest3.profile_artist = myartist
+myrequest3.product = myproduct
+myrequest3.save!
 #####
-myrequest = Request.new(status:'delivered')
-myrequest.profile_client = myclient
-myrequest.profile_artist = myartist
-myrequest.product = myproduct
-myrequest.save!
+myrequest4 = Request.new(status:1)
+myrequest4.profile_client = myclient
+myrequest4.profile_artist = myartist
+myrequest4.product = myproduct
+myrequest4.save!
 
 
 # Creation d'1 message
 
 mymessage1 = Message.new(thread_number:1, title:'Prise de contact', body:'Bonjour, j aime votre travail')
-mymessage1.request = myrequest
+mymessage1.request = myrequest1
 mymessage1.profile = myclient
 mymessage1.save!
 
 ######
 mymessage2 = Message.new(thread_number:2, title:'Demande de visite', body:'Bonjour, peut on visiter votre atelier ?')
-mymessage2.request = myrequest
+mymessage2.request = myrequest2
 mymessage2.profile = myclient
 mymessage2.save!
 ######
 mymessage3 = Message.new(thread_number:3, title:'Après vente', body:'Bonjour, j ai un probleme avec le produit que je vous ai acheté')
-mymessage3.request = myrequest
+mymessage3.request = myrequest3
 mymessage3.profile = myclient
 mymessage3.save!
 
 # Creation d'1 message de réponse
 
-mymessage1 = Message.new(thread_number:1, title:'RE: Prise de contact', body:'Bonjour, merci je travaille dur')
-mymessage2.request = myrequest
-mymessage2.profile = myartist
-mymessage2.save!
+mymessage4 = Message.new(thread_number:1, title:'RE: Prise de contact', body:'Bonjour, merci je travaille dur')
+mymessage4.request = myrequest1
+mymessage4.profile = myartist
+mymessage4.save!
 
 #######
-mymessage2 = Message.new(thread_number:2, title:'RE: Prise de contact', body:'Bonjour, oui c est possible samedi à 15.00')
-mymessage2.request = myrequest
-mymessage2.profile = myartist
-mymessage2.save!
+mymessage5 = Message.new(thread_number:2, title:'RE: Prise de contact', body:'Bonjour, oui c est possible samedi à 15.00')
+mymessage5.request = myrequest2
+mymessage5.profile = myartist
+mymessage5.save!
 #######
-mymessage3 = Message.new(thread_number:3, title:'RE: Prise de contact', body:'Tant pis pour vous, fallait pas l acheter !')
-mymessage3.request = myrequest
-mymessage3.profile = myartist
-mymessage3.save!
+mymessage6 = Message.new(thread_number:3, title:'RE: Après vente', body:'Tant pis pour vous, fallait pas l acheter !')
+mymessage6.request = myrequest3
+mymessage6.profile = myartist
+mymessage6.save!
 ########
 
 ################################################################################

@@ -1,7 +1,7 @@
 <div class="navbar-kingdom">
   <!-- Logo -->
   <a href="/" class="navbar-kingdom-brand">
-    <img src="images/lewagon.png" />
+    <h1><%= cl_image_tag("KingdomOfArtLong.png") %></h1>
   </a>
 
   <!-- Right Navigation -->
@@ -14,36 +14,52 @@
         <i class="fa fa-search"></i>
       </button>
     </form>
-
+  </div>
     <!-- Text link -->
-    <a href="" class="navbar-kingdom-item navbar-kingdom-link">Contact</a>
-
-    <!-- Text link -->
-    <a href="" class="navbar-kingdom-item navbar-kingdom-link">Team</a>
-
-    <!-- Notification link-->
-    <a href="" class="navbar-kingdom-item navbar-kingdom-link">
-      <div class="navbadge-container">
-        <i class="fa fa-envelope-o"></i>
-        <div class="navbadge badge-blue">3</div>
-      </div>
-    </a>
+<!--     <a href="/contact" class="navbar-kingdom-item navbar-kingdom-link">Contact</a>
+ -->    <%= link_to "Contact", contact_path, class: "navbar-kingdom-item navbar-kingdom-link" %>
 
     <!-- Profile picture and dropdown -->
     <div class="navbar-kingdom-item">
       <div class="dropdown">
         <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-kingdom-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-kingdom-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li><a href="#">Visitor profile</a></li>
+          <li><a href="#">Artist profile</a></li>
         </ul>
       </div>
     </div>
 
-    <!-- Button (call-to-action) -->
-    <a href="" class="navbar-kingdom-item navbar-kingdom-button btn">Post stuff</a>
-  </div>
+<!-- User logged?-->
+    <% if current_user %>
+      <div class="navbadge-container">
+        <p><%= current_user.profile.name %></p>
+      </div>
+    <% else %>
+      <!-- nothing as not logged !!! -->
+    <% end %>
+
+ <!-- Notification link-->
+    <% if current_user %>
+      <%= link_to profile_requests_path(current_user.profile), class: "navbar-kingdom-item navbar-kingdom-link" do %>
+        <div class="navbadge-container">
+          <i class="fa fa-envelope-o"></i>
+        </div>
+      <% end %>
+    <% else %>
+      <!-- nothing as not logged !!! -->
+    <% end %>
+
+    <!-- Button (Sing up / log in/out) -->
+<!--     <a href="" class="navbar-kingdom-item navbar-kingdom-button btn ">Sign up / Sign in</a> -->
+
+
+      <% if current_user %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navbar-kingdom-item navbar-kingdom-button btn" %>
+      <% else %>
+      <%= link_to "Sign up / Log in", new_user_session_path, class: "
+      navbar-kingdom-item navbar-kingdom-button btn" %>
+      <% end %>
 
   <!-- Dropdown appearing on mobile only -->
   <div class="navbar-kingdom-item hidden-md hidden-lg">
@@ -57,13 +73,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-

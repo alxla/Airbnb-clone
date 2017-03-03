@@ -1,0 +1,13 @@
+/* Banner design */
+.banner{
+  height: 40vh; /* 1vh => 1% of viewport height */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-content{
+  text-align: center;
+  color: white;
+}
