@@ -67,7 +67,7 @@
 
 /* Navbar search form */
 .navbar-kingdom-search {
-  flex: 0 1 300px;
+  flex: 0 1 100px;
   display: flex;
   justify-content: flex-end;
   padding: 0 10px;
@@ -84,7 +84,7 @@
   z-index: 1;
 }
 .navbar-kingdom-search-input {
-  flex: 0 1 300px;
+  flex: 1 0 100px;
   transition: all 0.15s ease;
   line-height: 40px;
   font-weight: lighter;
