@@ -21,6 +21,11 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'country_select'
 
+group :production do
+  #correct logout issue
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
