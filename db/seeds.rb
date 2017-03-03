@@ -245,7 +245,7 @@ myartistuser = User.new(email:'Trump@gmail.com')
 myartistuser.password = 'nuclearsecretcode'
 myartistuser.save!
 
-myartist = Profile.new(profile_type:'artist', name:'Trump', country:'MEX')
+myartist = Profile.new(profile_type:'artist', name:'Trump', country:'MEX', biography: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
 myartist.user = myartistuser
 myartist.remote_picture_url = "http://res.cloudinary.com/alxla/image/upload/v1488386298/trump_bxt5bk.jpg"
 myartist.save!
@@ -255,7 +255,7 @@ myuniverse.profile = myartist
 myuniverse.remote_picture_url = "http://res.cloudinary.com/alxla/image/upload/v1488387580/universe_ol4vdc.jpg"
 myuniverse.save!
 
-myproduct = Product.new(name:'Weapons', description:'mon joli jouet')
+myproduct = Product.new(name:'Weapons', description:'mon joli jouet', price: '12,5')
 myproduct.universe = myuniverse
 myproduct.remote_picture_url = "http://res.cloudinary.com/alxla/image/upload/v1488386298/weapon_k6utbp.jpg"
 myproduct.save!
