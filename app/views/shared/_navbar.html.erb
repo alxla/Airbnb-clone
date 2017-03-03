@@ -1,7 +1,7 @@
 <div class="navbar-kingdom">
   <!-- Logo -->
   <a href="/" class="navbar-kingdom-brand">
-    <img src="images/lewagon.png" />
+    <h1><%= cl_image_tag("KingdomOfArtLong.png") %></h1>
   </a>
 
   <!-- Right Navigation -->
@@ -23,10 +23,9 @@
 
     <!-- Notification link-->
     <a href="" class="navbar-kingdom-item navbar-kingdom-link">
-      <div class="navbadge-container">
-        <i class="fa fa-envelope-o"></i>
-        <div class="navbadge badge-blue">3</div>
-      </div>
+        <%= link_to profile_requests_path(current_user.profile), class:"navbadge-container" do %>
+          <i class="fa fa-envelope-o"></i>
+        <% end %>
     </a>
 
     <!-- Profile picture and dropdown -->

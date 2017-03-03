@@ -15,9 +15,9 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
+    @message = current_user.profile.messages.new(message_params)
     @message.save
-    redirect_to message_path(@message) # Show
+    redirect_to profile_requests_path(current_user.profile) # Redirige vers Request#index et non vers Show !!
   end
 
   def edit
@@ -46,6 +46,6 @@ class MessagesController < ApplicationController
     # *Strong params*: You need to *whitelist* what
     # can be updated by the user
     # Never trust user data!
-    params.require(:message).permit(:thread_number, :title, :body, :request_id, :profile_id)
+    params.require(:message).permit(:thread_number, :title, :body, :request_id)
   end
 end
